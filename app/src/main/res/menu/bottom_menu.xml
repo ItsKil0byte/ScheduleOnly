@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:id="@+id/menu_today" android:title="Сегодня" android:icon="@drawable/baseline_today_24"/>
+    <item android:id="@+id/menu_week" android:title="Неделя" android:icon="@drawable/baseline_view_week_24"/>
+
+</menu>
