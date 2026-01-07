@@ -12,7 +12,22 @@ class WeekViewModel : ViewModel() {
     val days: LiveData<List<Day>> = _days
 
     private fun getDays(): List<Day> {
-        return listOf()
+        return listOf(
+            Day(
+                "Понедельник", listOf(
+                    Lesson("It", "Me", "123", LocalTime.now(), LocalTime.now()),
+                    Lesson("It", "Me", "123", LocalTime.now(), LocalTime.now())
+                )
+            ),
+            Day(
+                "Вторник", listOf(
+                    Lesson("It", "Me", "123", LocalTime.now(), LocalTime.now()),
+                    Lesson("It", "Me", "123", LocalTime.now(), LocalTime.now()),
+                    Lesson("It", "Me", "123", LocalTime.now(), LocalTime.now()),
+                    Lesson("It", "Me", "123", LocalTime.now(), LocalTime.now()),
+                )
+            )
+        )
     }
 
     init {
