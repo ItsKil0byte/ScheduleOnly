@@ -15,7 +15,7 @@ class RootFragment : Fragment(R.layout.root_fragment) {
 
         if (savedInstanceState == null) {
             childFragmentManager.beginTransaction()
-                .replace(binding.rootFragmentsContainer.id, TodayFragment.newInstance())
+                .replace(binding.rootFragmentsContainer.id, TodayFragment())
                 .commit()
         }
 
@@ -23,16 +23,14 @@ class RootFragment : Fragment(R.layout.root_fragment) {
             when (item.itemId) {
                 R.id.menu_today -> {
                     childFragmentManager.beginTransaction().replace(
-                        binding.rootFragmentsContainer.id,
-                        TodayFragment.newInstance()
+                        binding.rootFragmentsContainer.id, TodayFragment()
                     ).commit()
                     true
                 }
 
                 R.id.menu_week -> {
                     childFragmentManager.beginTransaction().replace(
-                        binding.rootFragmentsContainer.id,
-                        WeekFragment.newInstance()
+                        binding.rootFragmentsContainer.id, WeekFragment()
                     ).commit()
                     true
                 }
@@ -40,10 +38,5 @@ class RootFragment : Fragment(R.layout.root_fragment) {
                 else -> false
             }
         }
-    }
-
-    companion object {
-        @JvmStatic
-        fun newInstance() = RootFragment().apply { }
     }
 }
