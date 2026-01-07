@@ -18,10 +18,32 @@ class RootFragment : Fragment(R.layout.root_fragment) {
                 .replace(binding.rootFragmentsContainer.id, TodayFragment.newInstance())
                 .commit()
         }
+
+        binding.navigationMenu.setOnItemSelectedListener { item ->
+            when (item.itemId) {
+                R.id.menu_today -> {
+                    childFragmentManager.beginTransaction().replace(
+                        binding.rootFragmentsContainer.id,
+                        TodayFragment.newInstance()
+                    ).commit()
+                    true
+                }
+
+                R.id.menu_week -> {
+                    childFragmentManager.beginTransaction().replace(
+                        binding.rootFragmentsContainer.id,
+                        WeekFragment.newInstance()
+                    ).commit()
+                    true
+                }
+
+                else -> false
+            }
+        }
     }
 
     companion object {
         @JvmStatic
-        fun newInstance() = RootFragment().apply {  }
+        fun newInstance() = RootFragment().apply { }
     }
 }
