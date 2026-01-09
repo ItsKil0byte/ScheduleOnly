@@ -24,6 +24,7 @@ navigation-fragment-ktx = { module = "androidx.navigation:navigation-fragment-kt
 navigation-ui-ktx = { module = "androidx.navigation:navigation-ui-ktx", version.ref = "navigation" }
 navigation-dynamic-features = { module = "androidx.navigation:navigation-dynamic-features-fragment", version.ref = "navigation" }
 vbpd = "dev.androidbroadcast.vbpd:vbpd:2.0.4"
+gson = "com.google.code.gson:gson:2.13.2"
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
