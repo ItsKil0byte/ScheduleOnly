@@ -8,7 +8,7 @@ import ru.kilobyte.scheduleonly.data.Lesson
 class LessonRepository(private val context: Context) {
     private val gson = Gson()
 
-    suspend fun loadFromFile(): List<Lesson> {
+    fun loadFromFile(): List<Lesson> {
         val text = context.assets.open("lessons.json").bufferedReader().use { it.readText() }
         val type = object : TypeToken<List<Lesson>>() {}.type
 

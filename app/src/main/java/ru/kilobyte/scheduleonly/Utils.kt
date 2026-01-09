@@ -9,7 +9,12 @@ object Utils {
         return hours * 60 + minutes
     }
 
-    fun toTimeString(minutes: Int): String {
-        return String.format("%02d:%02d", minutes / 60, minutes % 60)
+    fun parityCheck(parity: String, weekIsOdd: Boolean): Boolean {
+        return when (parity) {
+            "both" -> true
+            "odd" -> weekIsOdd
+            "even" -> !weekIsOdd
+            else -> false
+        }
     }
 }
