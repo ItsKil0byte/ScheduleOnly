@@ -1,4 +1,6 @@
-package ru.kilobyte.scheduleonly.data
+package ru.kilobyte.scheduleonly.data.model
+
+import ru.kilobyte.scheduleonly.data.model.Lesson
 
 data class Day(
     val name: String,

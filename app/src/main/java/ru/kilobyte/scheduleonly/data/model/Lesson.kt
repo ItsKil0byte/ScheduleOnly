@@ -1,4 +1,4 @@
-package ru.kilobyte.scheduleonly.data
+package ru.kilobyte.scheduleonly.data.model
 
 data class Lesson(
     val name: String,

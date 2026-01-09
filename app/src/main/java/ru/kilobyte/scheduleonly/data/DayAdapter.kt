@@ -1,10 +1,11 @@
-package ru.kilobyte.scheduleonly
+package ru.kilobyte.scheduleonly.data
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import ru.kilobyte.scheduleonly.data.Day
+import ru.kilobyte.scheduleonly.data.LessonAdapter
+import ru.kilobyte.scheduleonly.data.model.Day
 import ru.kilobyte.scheduleonly.databinding.ItemDayBinding
 
 class DayAdapter : RecyclerView.Adapter<DayAdapter.DayViewHolder>() {

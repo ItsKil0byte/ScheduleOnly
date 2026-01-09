@@ -1,10 +1,8 @@
-package ru.kilobyte.scheduleonly
+package ru.kilobyte.scheduleonly.presentier
 
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
@@ -12,29 +10,33 @@ import androidx.lifecycle.repeatOnLifecycle
 import androidx.recyclerview.widget.LinearLayoutManager
 import dev.androidbroadcast.vbpd.viewBinding
 import kotlinx.coroutines.launch
-import ru.kilobyte.scheduleonly.databinding.TodayFragmentBinding
+import ru.kilobyte.scheduleonly.R
+import ru.kilobyte.scheduleonly.ScheduleViewModel
+import ru.kilobyte.scheduleonly.data.DayAdapter
+import ru.kilobyte.scheduleonly.databinding.WeekFragmentBinding
 
-class TodayFragment : Fragment(R.layout.today_fragment) {
-    private val binding: TodayFragmentBinding by viewBinding(TodayFragmentBinding::bind)
+class WeekFragment : Fragment(R.layout.week_fragment) {
+    private val binding: WeekFragmentBinding by viewBinding(WeekFragmentBinding::bind)
     private val viewModel: ScheduleViewModel by viewModels(
         ownerProducer = { requireParentFragment() }
     )
-    private var adapter: LessonAdapter? = null
+    private var adapter: DayAdapter? = null
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        adapter = LessonAdapter()
+        adapter = DayAdapter()
 
-        binding.todayRecycler.layoutManager = LinearLayoutManager(requireContext())
-        binding.todayRecycler.adapter = adapter
+        binding.weekRecycler.layoutManager = LinearLayoutManager(requireContext())
+        binding.weekRecycler.adapter = adapter
 
         viewLifecycleOwner.lifecycleScope.launch {
             repeatOnLifecycle(Lifecycle.State.STARTED) {
                 viewModel.lessons.collect {
-                    adapter?.submitList(viewModel.getLessons())
+                    adapter?.submitList(viewModel.getDays())
                 }
             }
         }
     }
+
 }

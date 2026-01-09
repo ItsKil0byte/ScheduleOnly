@@ -1,10 +1,14 @@
-package ru.kilobyte.scheduleonly
+package ru.kilobyte.scheduleonly.presentier
 
 import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import dev.androidbroadcast.vbpd.viewBinding
+import ru.kilobyte.scheduleonly.R
+import ru.kilobyte.scheduleonly.ScheduleViewModel
+import ru.kilobyte.scheduleonly.presentier.TodayFragment
+import ru.kilobyte.scheduleonly.presentier.WeekFragment
 import ru.kilobyte.scheduleonly.databinding.RootFragmentBinding
 
 class RootFragment : Fragment(R.layout.root_fragment) {

@@ -4,6 +4,7 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import dev.androidbroadcast.vbpd.viewBinding
 import ru.kilobyte.scheduleonly.databinding.ActivityMainBinding
+import ru.kilobyte.scheduleonly.presentier.RootFragment
 
 class MainActivity : AppCompatActivity(R.layout.activity_main) {
 

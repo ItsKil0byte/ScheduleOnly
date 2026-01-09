@@ -1,11 +1,11 @@
-package ru.kilobyte.scheduleonly
+package ru.kilobyte.scheduleonly.data
 
 import android.content.Context
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
-import ru.kilobyte.scheduleonly.data.Lesson
+import ru.kilobyte.scheduleonly.data.model.Lesson
 
-class LessonRepository(private val context: Context) {
+class ScheduleRepository(private val context: Context) {
     private val gson = Gson()
 
     fun loadFromFile(): List<Lesson> {

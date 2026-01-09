@@ -1,9 +1,9 @@
-package ru.kilobyte.scheduleonly
+package ru.kilobyte.scheduleonly.data
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import ru.kilobyte.scheduleonly.data.Lesson
+import ru.kilobyte.scheduleonly.data.model.Lesson
 import ru.kilobyte.scheduleonly.databinding.ItemLessonBinding
 
 class LessonAdapter : RecyclerView.Adapter<LessonAdapter.LessonViewHolder>() {
@@ -17,8 +17,8 @@ class LessonAdapter : RecyclerView.Adapter<LessonAdapter.LessonViewHolder>() {
             binding.subjectName.text = item.name
             binding.subjectTeacher.text = item.teacher
             binding.subjectRoom.text = item.room
-            binding.subjectStartTime.text = item.startTime.toString()
-            binding.subjectEndTime.text = item.endTime.toString()
+            binding.subjectStartTime.text = item.startTime
+            binding.subjectEndTime.text = item.endTime
         }
     }
 

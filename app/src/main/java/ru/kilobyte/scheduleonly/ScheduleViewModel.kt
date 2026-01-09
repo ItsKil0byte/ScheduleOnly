@@ -7,15 +7,16 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
-import ru.kilobyte.scheduleonly.data.Day
-import ru.kilobyte.scheduleonly.data.Lesson
+import ru.kilobyte.scheduleonly.data.model.Day
+import ru.kilobyte.scheduleonly.data.model.Lesson
+import ru.kilobyte.scheduleonly.data.ScheduleRepository
 import java.time.LocalDate
 import java.time.temporal.WeekFields
 import java.util.Locale
 
 class ScheduleViewModel(application: Application) : AndroidViewModel(application) {
 
-    private val repository = LessonRepository(application)
+    private val repository = ScheduleRepository(application)
     private val _lessons = MutableStateFlow<List<Lesson>>(emptyList())
     val lessons: StateFlow<List<Lesson>> = _lessons
 
